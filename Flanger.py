@@ -1,25 +1,12 @@
 import numpy as np
 from scipy.io import wavfile
 from scipy import signal
-import matplotlib.pyplot as plt
 from decimal import Decimal
-# plt.rcParams['agg.path.chunksize'] = 10000
-# import math
-# M(o) = 13Hz
-# A = 12.8 ms
-# b = g + z-1
-# a = 1 + gz-1
-# g = 1-x / 1 + x
-
 
 def getWav(filename):
     rate, data = wavfile.read('source_wav/'+filename)
     data = data/(32768.)
     data = np.float32(data)
-    # plt.plot(range(0, len(data)), data)
-    # plt.grid()
-    # plt.show()
-    # input()
     return rate, data
 
 def flang(filename, f_rate, depth, new_filename):
@@ -62,5 +49,3 @@ def flang(filename, f_rate, depth, new_filename):
     if filename.endswith('.wav'):
         filename = filename[:-4]
     wavfile.write(new_filename+'_FLANGED.wav', samp_rate, final_data)
-
-# flang('guitar.wav', 20, 1)
