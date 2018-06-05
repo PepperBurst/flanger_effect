@@ -34,7 +34,7 @@ class Flanger(Frame):
 
     def make_widgets(self):
         self.winfo_toplevel().title("Digital Flanger Effect")
-        label_1 = Label(self, text='DSP Project by: Angelo Metran & Mart Jethro D.G. Javier', relief='raised', justify='center', pady=4, width=50)
+        label_1 = Label(self, text='DSP Project', relief='raised', justify='center', pady=4, width=50)
         label_2 = Label(self, text='Filename:', relief='groove', justify='left', pady=4, anchor='w', width=50)
         entry_1 = Entry(self, width=59)
         scale_1 = Scale(self, length = 360, from_=1, to=20, resolution=1, relief='sunken', label='Rate:', tickinterval=1, orient='horizontal', highlightcolor='green')
